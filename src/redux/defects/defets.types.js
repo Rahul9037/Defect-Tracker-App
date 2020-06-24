@@ -1,0 +1,5 @@
+export const DefectActionTypes = {
+    GET_FILTERED_DEFECTS : "GET_FILTERED_DEFECTS",
+    UPDATE_DEFECT : "UPDATE_DEFECT",
+    ADD_DEFECT : "ADD_DEFECT"
+} 

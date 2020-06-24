@@ -1,0 +1,47 @@
+.defects-table{
+  width: 90%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin: 30px 50px;
+}
+
+.defects-table tbody{
+display:block;
+width: 100%;
+overflow-y: scroll;
+height: 300px;
+table-layout: fixed;
+}
+
+.defects-table thead tr {
+ display: block;
+}
+
+.defects-table thead {
+color:#fff;
+background-color: #6699ff;
+}
+
+.defects-table th, .defects-table td {
+padding: 5px;
+text-align: center;
+border: 1px solid #dddddd;
+}
+  
+  .filter {
+    width: 90%;
+    height: 200px;
+    border: 1px solid gray;
+    margin: 10px 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.priority {
+    padding-top: 20px;
+}
+
+.category {
+    padding-top: 20px;
+}
+

@@ -1,0 +1,9 @@
+tr {
+    display: block;
+   }
+
+   td {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #dddddd;
+    }
