@@ -1,14 +1,18 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import './defectdetails.styles.css';
 import Defect from '../defects/defect.component';
-import {getFilteredDefects} from '../../redux/defects/defects.actions';
+import { getFilteredDefects } from '../../redux/defects/defects.actions';
 
-const DefectDetails = ({defects,filteredDefects,getFilteredDefects}) => {
+const DefectDetails = ({ defects, filteredDefects, getFilteredDefects }) => {
 
     const handleChange = (e) => {
-            const { name , value } = e.target;
-            getFilteredDefects({ name , value})
+        let { name, value } = e.target;
+        if(name === "Priority" && value !== "All")
+        {
+            value = parseInt(value);
+        }
+        getFilteredDefects(value)
     }
 
     return (
@@ -40,18 +44,18 @@ const DefectDetails = ({defects,filteredDefects,getFilteredDefects}) => {
                 </div>
             </div>
             <div>
-                <table  className="defects-table">
+                <table className="table-scroll">
                     <thead>
                         <tr>
-                            <th style={{width :"20%"}} >Defect Category</th>
-                            <th style={{width :"35%"}}>Description</th>
-                            <th style={{width :"5%"}} >Priority</th>
-                            <th style={{width :"20%"}} >Status</th>
-                            <th style={{width :"20%"}} >Change Status</th>
+                            <th>Defect Category</th>
+                            <th>Description</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                            <th>Change Status</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        { 
+                    <tbody className="body-half-screen">
+                    { 
                             (!(Array.isArray(filteredDefects) && filteredDefects.length === 0)) ? 
                             filteredDefects.map( defect => <Defect key={defect.id} defect={defect}/>)
                             :
@@ -59,18 +63,19 @@ const DefectDetails = ({defects,filteredDefects,getFilteredDefects}) => {
                         }
                     </tbody>
                 </table>
+
             </div>
         </div>
     )
 }
 
 const mapStateToProps = state => ({
-    defects : state.defectsReducer.defects,
-    filteredDefects : state.defectsReducer.filteredDefects
+    defects: state.defectsReducer.defects,
+    filteredDefects: state.defectsReducer.filteredDefects
 })
 
 const mapDispatchToProps = Dispatch => ({
-    getFilteredDefects : filter => Dispatch(getFilteredDefects(filter))
+    getFilteredDefects: value => Dispatch(getFilteredDefects(value))
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(DefectDetails);
+export default connect(mapStateToProps, mapDispatchToProps)(DefectDetails);

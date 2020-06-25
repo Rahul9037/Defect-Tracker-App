@@ -1,8 +1,8 @@
 import { DefectActionTypes } from './defets.types';
 
-export const getFilteredDefects = filter =>({
+export const getFilteredDefects = value =>({
     type : DefectActionTypes.GET_FILTERED_DEFECTS,
-    data : filter
+    data : value
 });
 
 export const updateStatus = defect => ({

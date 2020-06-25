@@ -41,7 +41,6 @@ class AddDefect extends Component {
     }
 
     render() {
-        const { Desc ,defCat ,Priority} = this.state;
         return (
             <div>
                 <Header />
