@@ -10,10 +10,12 @@
     width: 500px;
     text-align: center;
     border-right: 1px dotted gray; 
-    padding-top: 200px;  
+    padding-top: 20%;  
     font-size: 35px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: grey;
+    display: flex;
+    flex-direction: column;
 }
 
 .right-login {
@@ -57,4 +59,10 @@
     text-align: center;
     padding-top: 10px;
 
+}
+
+img {
+    padding-left: 40%;
+    width: 120px;
+    height: 80px;
 }

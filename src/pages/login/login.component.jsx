@@ -1,5 +1,6 @@
 import React , { Component } from 'react';
 import './login.styles.css';
+import logo from './DT.jpg';
 
 class Login extends Component {
     constructor(){
@@ -48,7 +49,8 @@ class Login extends Component {
         return (
             <div className="container">
                 <div className="left-header">
-                    Defect Tracker Application
+                    <img src={logo} alt="Logo"></img>
+                    <div>Defect Tracker Application</div>
                </div>
                 <div className="right-login">
                     <div className="login">
